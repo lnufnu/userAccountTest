@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-lg-12
+        .col-lg-4
+        .col-lg-4
+          .loginbox
+            .col-lg-2
+            .col-lg-8
+              img.img-circle(src='/images/defaultuser.jpg')
+            .row
+              .col-lg-1
+              .col-lg-10
+                form(action="/api/users", method="post")
+                  .form-group
+                    label(for="username") Username
+                    input.form-control#inputUsername(type="text", placeholder="Userame", name="username")
+                  .form-group
+                    label(type="password") Password
+                    input.form-control#inputPassword(type="password", placeholder="Password", name="password")
+                    label
+                      input(type="checkbox")
+                      | I agree to the terms &amp; conditions.
+                  .form-group
+                    button.btn.btn-primary(type="Submit") Sign In             
